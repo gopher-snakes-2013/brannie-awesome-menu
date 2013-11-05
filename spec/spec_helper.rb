@@ -3,7 +3,7 @@ ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
-require 'capybara'
+require 'capybara/rspec'
 require 'database_cleaner'
 require 'shoulda-matchers'
 require 'factory_girl'
@@ -11,6 +11,7 @@ require 'factory_girl'
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 RSpec.configure do |config|
+  # config.include Capybara::DSL
 
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 

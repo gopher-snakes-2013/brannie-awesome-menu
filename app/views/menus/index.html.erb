@@ -1,10 +1,12 @@
 <h1> Welcome to Awesome menus </h1>
+<div class="menu_form">
+  <%= render "menu_form" %>
+</div>
 
-<%= form_for :menu, remote:true do |f| %>
-  <p>
-    <%= f.text_field :name, placeholder: "menu name" %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<div class="menu_list">
+  <% @menus.each do |menu| %>
+    <div>
+      <h3> <%= menu.name %> </h3>
+    </div>
+  <% end %>
+</div>

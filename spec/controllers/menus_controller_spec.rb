@@ -13,4 +13,18 @@ describe MenusController do
       end
     end
 
+    describe 'POST #create' do
+      let(:params) {{ :menu => {name: 'Breakfast'}  }}
+      it 'creates a new menu item' do
+        expect{
+          post :create, params
+          }.to change { Menu.count }.by(1)
+      end
+
+      it 'redirects to index after creating a new menu' do
+         post :create, params
+         response.should redirect_to root_path
+      end
+    end
+
 end
