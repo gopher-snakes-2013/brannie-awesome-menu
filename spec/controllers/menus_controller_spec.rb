@@ -21,10 +21,6 @@ describe MenusController do
           }.to change { Menu.count }.by(1)
       end
 
-      it 'redirects to index after creating a new menu' do
-         post :create, params
-         response.should redirect_to root_path
-      end
     end
 
 end
