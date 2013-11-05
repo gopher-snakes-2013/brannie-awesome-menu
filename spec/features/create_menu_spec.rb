@@ -9,4 +9,10 @@ feature 'homepage' do
    expect(page).to have_content('Breakfast')
   end
 
+  scenario 'if invalid params passed, errors show' do
+    visit(root_path)
+    click_button("Create Menu")
+    expect(page).to have_content('')
+  end
+
 end

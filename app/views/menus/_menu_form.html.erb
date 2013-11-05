@@ -1,8 +1,6 @@
 <%= form_for @menu do |f| %>
-  <p>
+  <div id="name_field">
     <%= f.text_field :name, placeholder: "menu name" %>
-  </p>
-  <p>
     <%= f.submit %>
-  </p>
+  </div>
 <% end %>
