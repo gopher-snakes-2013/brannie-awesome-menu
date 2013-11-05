@@ -8,9 +8,11 @@ class MenusController < ApplicationController
     @menu = Menu.new
     @menu.name = params[:menu][:name]
     if @menu.save
-      redirect_to root_path
+      p "THIS IS AJAX"
+      render :json => { menu: @menu }
+      # redirect_to root_path
     else
-      p flash[:errors] = @menu.errors.full_messages
+      flash[:errors] = @menu.errors.full_messages
       redirect_to root_path
     end
   end

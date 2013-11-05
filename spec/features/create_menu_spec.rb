@@ -12,7 +12,7 @@ feature 'homepage' do
   scenario 'if invalid params passed, errors show' do
     visit(root_path)
     click_button("Create Menu")
-    expect(page).to have_content('')
+    expect(page).to have_content("Name can't be blank")
   end
 
 end
