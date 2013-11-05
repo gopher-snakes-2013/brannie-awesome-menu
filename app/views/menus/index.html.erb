@@ -1,0 +1,20 @@
+<h1> Welcome to Awesome menus </h1>
+<div class='errors'>
+  <% unless flash[:errors].nil? %>
+    <% flash[:errors].each do |error| %>
+      <h4><%= error %><h4>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="menu_form">
+  <%= render "menu_form" %>
+</div>
+<h2> Menus </h2>
+<div class="menu_list">
+  <% @menus.each do |menu| %>
+    <div>
+      <h3> <%= menu.name %> </h3>
+    </div>
+  <% end %>
+</div>

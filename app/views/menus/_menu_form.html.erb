@@ -1,0 +1,6 @@
+<%= form_for @menu, remote: true do |f| %>
+  <div id="name_field">
+    <%= f.text_field :name, placeholder: "menu name" %>
+    <%= f.submit class: 'create_menu'%>
+  </div>
+<% end %>
